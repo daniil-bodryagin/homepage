@@ -52,6 +52,7 @@ body.dark {
     display: grid;
     justify-items: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .interface-change-button--switch {
@@ -125,6 +126,10 @@ body.dark {
     text-decoration: none;
     display: flex;
     justify-content: start;
+}
+
+.contact-info__item--not-recommended {
+    cursor: not-allowed;
 }
 
 .contact-info__item:not(:last-child) {
