@@ -36,7 +36,25 @@ body.dark {
     max-width: 900px;
 }
 
+.interface-change-button {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border: 2px solid var(--icon-color);
+    border-radius: 50%;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.interface-change-button--switch {
+    top: 15px;
+    right: 15px;
+}
+
 .resume {
+    position: relative;
     background-color: var(--background-color);
     margin: 50px auto;
     border: 1px solid #f5f5f5;
