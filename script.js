@@ -1,20 +1,34 @@
-const interfaceChangeHandler = ({target}) => {
-    const buttonEl = target.closest('[data-action]');
-    if (!buttonEl) return;
+const interfaceChangeHandler = ({ target }) => {
+  const buttonEl = target.closest("[data-action]");
+  if (!buttonEl) return;
 
-    const action = buttonEl.dataset.action;
-    if (action in actions) actions[action](buttonEl);
-}
+  const action = buttonEl.dataset.action;
+  if (action in actionProps) {
+    const { elementToChange, classToChange, firstIcon, secondIcon } =
+      actionProps[action];
+    elementToChange.classList.toggle(classToChange);
+    const icon = buttonEl.querySelector("i");
+    icon.classList.toggle(firstIcon);
+    icon.classList.toggle(secondIcon);
+  }
+};
 
-const colorThemeButtonEl = document.querySelector('#color-theme-button');
+const colorThemeButtonEl = document.querySelector("#color-theme-button");
+const hideResumeButtonEl = document.querySelector("#hide-resume-button");
 
-const actions = {
-    'switch-theme': (buttonEl) => {
-        document.body.classList.toggle('dark');
-        const icon = buttonEl.querySelector('i');
-        icon.classList.toggle('fa-moon');
-        icon.classList.toggle('fa-sun');
-    }
-}
+const actionProps = {
+  "switch-theme": {
+    elementToChange: document.body,
+    classToChange: "dark",
+    firstIcon: "fa-moon",
+    secondIcon: "fa-sun",
+  },
+  "hide-resume": {
+    elementToChange: document.querySelector("#resume"),
+    classToChange: "visible",
+    firstIcon: "fa-eye",
+    secondIcon: "fa-eye-slash",
+  },
+};
 
-document.body.addEventListener('click', interfaceChangeHandler);
+document.body.addEventListener("click", interfaceChangeHandler);
