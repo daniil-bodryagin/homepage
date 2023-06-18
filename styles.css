@@ -4,16 +4,35 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    --space-color: #000000;
+    --background-color: #ffffff;
+    --primary-text-color: #181820;
+    --secondary-text-color: #343438;
+    --durability-text-color: #363b419c;
+    --icon-color: #6a737d;
+    --border-color: #0099ff45;
+    --text-decoration-color: #0099ff;
+    
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    background: var(--space-color) url(assets/the-orion-nebula.jpg) center / cover fixed no-repeat;
+    color: var(--primary-text-color);
+}
 
-    --primary-text-color: #181820;
-    --secondary-text-color: #5c5c62;
-    --durability-text-color: #6a737d9c;
-    --icon-color: #6a737d;
-    --border-color: #ff9a0045;
-    --text-decoration-color: #ff9a00;
+body.dark {
+    --background-color: #181820;
+    --primary-text-color: #c3ddff;
+    --secondary-text-color: #e6e6e6;
+    --durability-text-color: #c5c5c59c;
+    --icon-color: #c1cedd;
+    --border-color: #a6d4ff45;
+    --text-decoration-color: #a6d4ff;
 }
 
 .container {
@@ -22,24 +41,41 @@ body {
     max-width: 900px;
 }
 
-.fh {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.interface-change-button {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    background-color: var(--background-color);
+    border: 2px solid var(--icon-color);
+    border-radius: 50%;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.fv {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.interface-change-button--switch {
+    top: 60px;
+    right: 10px;
+}
+
+.interface-change-button--hide {
+    top: 60px;
+    left: 10px;
 }
 
 .resume {
+    background-color: var(--background-color);
     margin: 50px auto;
     border: 1px solid #f5f5f5;
     box-shadow: 1px 1px 7px 7px #f5f5f5;
     padding: 30px 0;
     max-width: 900px;
+}
+
+.visible {
+    visibility: hidden;
 }
 
 .resume__block {
@@ -48,24 +84,10 @@ body {
     margin-bottom: 15px;
 }
 
-@media screen and (max-width: 576px) {
-
-    .main-info,
-    .contact_info_container {
-        flex-direction: column;
-    }
-
-    .contact_info_container {
-        align-items: center;
-    }
-
-    .contact-info__block:not(:last-child) {
-        margin-bottom: 20px;
-    }
-
-    .experiences {
-        margin-right: 0;
-    }
+.contact_info_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
 }
 
 .contact-info__header,
@@ -86,13 +108,17 @@ body {
 }
 
 .contact-info__block {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    align-content: space-between;
 }
 
 .contact-info__block--center {
     justify-content: center;
+    align-content: center;
+}
+
+.contact-info__block--right {
+    justify-content: right;
 }
 
 .contact-info__item {
@@ -102,6 +128,10 @@ body {
     justify-content: start;
 }
 
+.contact-info__item--not-recommended {
+    cursor: not-allowed;
+}
+
 .contact-info__item:not(:last-child) {
     margin-bottom: 20px;
 }
@@ -109,11 +139,12 @@ body {
 .contact-info__item-icon-wrapper {
     margin-right: 10px;
     width: 20px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
-.contact-info__item-icon path {
+.contact-info__item-icon-wrapper i::before {
     fill: var(--icon-color);
 }
 
@@ -123,23 +154,23 @@ body {
 }
 
 .contact-info__avatar {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    border-radius: 5%;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 3px solid;
     border-color: var(--text-decoration-color);
 }
 
 .intro {
-    display: flex;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: min-content auto;
 }
 
 .intro__icon-wrapper {
-    margin-right: 30px;
+    margin-right: 20px;
     width: 30px;
-    display: flex;
+    display: grid;
     justify-content: center;
 }
 
@@ -166,10 +197,21 @@ body {
 .skills__text {
     color: var(--secondary-text-color);
     text-align: justify;
+    margin-bottom: 15px;
+}
+
+.skills__text--emphasized {
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.main-info {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr;
 }
 
 .experiences {
-    flex: 1 1 60%;
     margin-right: 50px;
 }
 
@@ -217,10 +259,6 @@ body {
     padding-left: 20px;
 }
 
-.additional-info {
-    flex: 1 1 40%;
-}
-
 .additional-info__education {
     margin-bottom: 20px;
 }
@@ -260,4 +298,38 @@ body {
 
 .additional-info__languages-item {
     color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 576px) {
+    .interface-change-button {
+        width: 2em;
+        height: 2em;
+        padding: 4px;
+    }
+
+    .main-info,
+    .contact_info_container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact_info_container {
+        align-items: center;
+    }
+    
+    .contact-info__block--center {
+        order: -1;
+    }
+
+    .contact-info__block--right {
+        justify-content: left;
+    }
+
+    .contact-info__block:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .experiences {
+        margin-right: 0;
+    }
+
 }
