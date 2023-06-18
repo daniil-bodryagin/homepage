@@ -2,9 +2,265 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="brands.min.css" />
+    <link rel="stylesheet" href="solid.min.css" />
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <title>Résumé</title>
   </head>
   <body>
-    ― Hello World! &#x1F609;
+    <main>
+      <div
+        id="color-theme-button"
+        class="interface-change-button interface-change-button--switch"
+        data-action="switch-theme"
+        title="Switch to dark/light mode"
+      >
+        <i class="far fa-moon"></i>
+      </div>
+      <div
+        id="hide-resume-button"
+        class="interface-change-button interface-change-button--hide"
+        data-action="hide-resume"
+        title="Сторінка - просто космос"
+      >
+        <i class="far fa-eye"></i>
+      </div>
+      <div id="resume" class="resume">
+        <div class="container">
+          <div class="resume__block">
+            <h1 class="contact-info__header">Daniil Bodryagin</h1>
+            <h3 class="contact-info__sub-header">Frontend Developer</h3>
+
+            <div class="contact_info_container">
+              <div class="contact-info__block">
+                <a
+                  href="https://www.google.com.ua/maps/place/Mykolaiv,+Mykolaiv+Oblast,+54000/@46.9331802,31.842848,11z/data=!4m6!3m5!1s0x40c5cb89fb7213d5:0x970e39fab9e05680!8m2!3d46.975033!4d31.9945829!16s%2Fg%2F122kzf92?hl=en&entry=ttu"
+                  rel="author"
+                  class="contact-info__item"
+                  title="Google map"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="far fa-location-dot"></i>
+                  </div>
+                  <span>Mykolaiv, Ukraine</span>
+                </a>
+                <a
+                  href="tel:+380730967648"
+                  rel="author"
+                  title="The unreliable way to contact me"
+                  class="contact-info__item"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="far fa-phone"></i>
+                  </div>
+                  <span>+380730967648</span>
+                </a>
+                <a
+                  href="mailto:daniilMAOmail@gmail.com"
+                  rel="author"
+                  title="The slow way to contact me"
+                  class="contact-info__item"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="far fa-envelope"></i>
+                  </div>
+                  <span>daniilMAOmail@gmail.com</span>
+                </a>
+              </div>
+
+              <div class="contact-info__block contact-info__block--center">
+                <img
+                  class="contact-info__avatar"
+                  src="assets/avatar.png"
+                  alt="Avatar"
+                />
+              </div>
+
+              <div class="contact-info__block contact-info__block--right">
+                <a
+                  href="https://t.me/raptorsaturn"
+                  rel="author"
+                  title="If you want to contact me - this is the best way!"
+                  class="contact-info__item"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="fab fa-telegram"></i>
+                  </div>
+                  <span>@raptorsaturn</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/daniil-bodryagin-4a65b4190"
+                  rel="author"
+                  title="Page is under reconstruction! I'm sory (T_T)"
+                  class="contact-info__item contact-info__item--not-recommended"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <span>Daniil Bodryagin</span>
+                </a>
+                <a
+                  href="https://github.com/daniil-bodryagin"
+                  rel="author"
+                  title="Recursion"
+                  class="contact-info__item"
+                >
+                  <div class="contact-info__item-icon-wrapper">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <span>daniil-bodryagin</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="resume__block">
+            <div class="intro">
+              <div class="intro__icon-wrapper">
+                <svg
+                  class="intro__icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="intro_text">
+                I always connected my life and profession with science and
+                technology. I'd been working at an astronomical observatory
+                where I carried out astronomical observations, small scripts
+                creating, local network maintenance and science popularization
+                for ten years. Decided to dive deeper into programming because
+                I'm sure that almost everyone would need to use it in the future
+                and also because I enjoy technical puzzles solving.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="resume__block">
+            <div class="skills">
+              <h3 class="skills__header">Skills</h3>
+              <p class="skills__text">
+                <span class="skills__text--emphasized">Hard: </span>JavaScript
+                (ES6+), algorithms, DOM manipulation, network requests, OOP.
+                Semantic and valid HTML5/CSS3, responsive layout with
+                blocks/flexbox/grid, SASS, BEM. Git, basic Webpack.
+              </p>
+              <p class="skills__text">
+                <span class="skills__text--emphasized">Soft: </span>Creative
+                thinking, communication skills, critical thinking, mentoring.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="resume__block">
+            <div class="main-info">
+              <div class="experiences">
+                <h3 class="experiences__header">Experience</h3>
+                <div class="experiences__company">
+                  <div class="experiences__company-header">
+                    <span class="experiences__company-header-durability"
+                      >2013 – 2023</span
+                    >
+                    <h3 class="experiences__company-header-name">
+                      Research Institute "Mykolaiv Astronimical Observatory"
+                    </h3>
+                  </div>
+
+                  <div class="experiences__company-project">
+                    <span class="experiences__company-project-role"
+                      >Researcher Engineer</span
+                    >
+                    <h3 class="experiences__company-project-name">
+                      Scientific research program "METASTER"
+                    </h3>
+                    <ul class="experiences__company-project-responsibilities">
+                      <li>Asteroid observation</li>
+                      <li>Observational data reduction</li>
+                      <li>Script programming</li>
+                    </ul>
+                  </div>
+
+                  <div class="experiences__company-project">
+                    <span class="experiences__company-project-role"
+                      >Programmer Engineer</span
+                    >
+                    <h3 class="experiences__company-project-name">
+                      Observatory IT Center
+                    </h3>
+                    <ul class="experiences__company-project-responsibilities">
+                      <li>Local Network maintenance</li>
+                      <li>Telescope configuring</li>
+                      <li>Popular science events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="additional-info">
+                <div class="additional-info__education">
+                  <h3 class="additional-info__education-header">Education</h3>
+                  <div class="additional-info__education-university">
+                    <span
+                      class="additional-info__education-university-durability"
+                      >2008 – 2014</span
+                    >
+                    <h3
+                      class="additional-info__education-university-speciality"
+                    >
+                      Physics lecturer. Informatics and astronomy teacher.
+                    </h3>
+                    <p class="additional-info__education-university-name">
+                      Mykolaiv National University named after V.O. Sukhomlinsky
+                    </p>
+                  </div>
+                </div>
+
+                <div class="additional-info__education">
+                  <h3 class="additional-info__education-header">
+                    Self-Education
+                  </h3>
+                  <div class="additional-info__education-university">
+                    <span
+                      class="additional-info__education-university-durability"
+                      >2022</span
+                    >
+                    <h3
+                      class="additional-info__education-university-speciality"
+                    >
+                      Frontend Developer
+                    </h3>
+                    <p class="additional-info__education-university-name">
+                      Kottans Frontend Course
+                    </p>
+                  </div>
+                </div>
+
+                <div class="additional-info__languages">
+                  <h3 class="additional-info__languages-header">Languages</h3>
+                  <p class="additional-info__languages-item">
+                    Ukrainian (Fluent)
+                  </p>
+                  <p class="additional-info__languages-item">
+                    Russian (Fluent)
+                  </p>
+                  <p class="additional-info__languages-item">
+                    English (Intermediate)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
